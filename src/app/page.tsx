@@ -1,9 +1,8 @@
 'use client'
 
 import Image from "next/image";
-import { useState } from "react";
 import Particles from '../components/Particles';
-import Galaxy from '../components/Galaxy';
+import SplitText from "../components/SplitText";
 
 /*MEDIA*/
 import headerimg from '../images/header-image.png';
@@ -34,9 +33,33 @@ export default function Home() {
               alphaParticles={false}
               disableRotation={false}
             />
-            <div className="absolute text-center text-white">
-              <h1 className="text-3xl md:text-4xl font-bold mb-2">Angel & Alondra</h1>
-              <p className="text-lg">Nos casamos</p>
+            <div className="absolute text-center text-white flex-col flex">
+              <SplitText
+                text="Angel & Alondra"
+                className="text-4xl font-semibold text-center"
+                delay={200}
+                duration={0.6}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="center"
+              />
+              <SplitText
+                text="Nos casamos"
+                className="text-2xl font-semibold text-center"
+                delay={200}
+                duration={0.6}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="center"
+              />
             </div>
           </div>
         </div>
@@ -91,10 +114,12 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-2">
             {['1', '2', '3', '4'].map((i) => (
               <div key={i} className="aspect-square border border-white rounded-lg overflow-hidden">
-                <img
-                  src={`https://via.placeholder.com/300x300/FFFFFF/000000?text=Imagen+${i}`}
-                  alt={`Imagen ${i} en blanco y negro`}
-                  className="w-full h-full object-cover"
+                <Image
+                  src={headerimg}
+                  alt="Header de boda en blanco y negro"
+                  width={800}
+                  height={600}
+                  className="inset-0 w-full h-full object-cover mask-b-from-60%"
                 />
               </div>
             ))}
@@ -102,7 +127,6 @@ export default function Home() {
         </div>
 
         {/* Formulario */}
-
 
         {/* Footer */}
         <footer className="text-center py-8 text-gray-600 text-sm border-t border-white mt-8">

@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Particles from '../components/Particles';
 import SplitText from "../components/SplitText";
+import CircularGallery from '../components/CircularGallery'
+
 
 /*MEDIA*/
 import headerimg from '../images/header-image.png';
@@ -13,7 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white font-sans">
       {/* Header */}
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="relative w-50% h-screen overflow-hidden max-w-md mx-auto px-0 py-0">
         <Image
           src={headerimg}
           alt="Header de boda en blanco y negro"
@@ -123,6 +125,16 @@ export default function Home() {
                 />
               </div>
             ))}
+          </div>
+          <div className="h- mt-8">
+            <CircularGallery
+              items={[{ image: headerimg.src, text: "string" }]}
+              bend={4}
+              textColor="#ffffff"
+              borderRadius={0.05}
+              scrollEase={0.5}
+
+            />
           </div>
         </div>
 

@@ -30,15 +30,15 @@ const Home = () => {
       {/* Primera Sección: Foto con marco */}
       <section className="py-8 px-4">
         <div className="relative w-full h-full max-w-md mx-auto bg-black border-4 border-black overflow-hidden">
-          <Image 
+          <Image
             src={headerimg}
-            alt="Marco decorativo" 
+            alt="Marco decorativo"
             width={800}
             height={300}
             className="w-full h-auto object-cover border-50 border-gray-300"
           />
           <div className="absolute bottom-4 left-0 right-0 text-center">
-            
+
             <h1 className="text-xl italic font-serif text-black">Nos casamos</h1>
           </div>
         </div>
@@ -48,7 +48,7 @@ const Home = () => {
       <section className="py-32 px-4 bg-gray-300">
         <div className="max-w-md mx-auto text-center space-y-4">
           <p className="text-red-800 italic font-serif text-lg">
-            "Por encima de todo, vístanse de amor, que es el vínculo perfecto." - Colosenses 3:14
+            &quot;Por encima de todo, vístanse de amor, que es el vínculo perfecto.&quot; - Colosenses 3:14
           </p>
           <p className="text-black italic font-serif">
             Agradecemos a nuestros queridos padres por su amor incondicional y guía en este camino hacia el matrimonio.
@@ -70,9 +70,9 @@ const Home = () => {
       {/* Cuarta Sección: Foto grande de la pareja */}
       <section className="py-8 px-4">
         <div className="max-w-md mx-auto">
-          <img 
-            src="" 
-            alt="Foto grande de Angel y Alondra" 
+          <img
+            src=""
+            alt="Foto grande de Angel y Alondra"
             className="w-full h-auto object-cover rounded-lg border-2 border-black"
           />
         </div>
@@ -84,9 +84,9 @@ const Home = () => {
           <div className="text-center">
             <h3 className="text-xl text-red-800 italic font-serif">Parroquia</h3>
             <p className="text-black">Iglesia Inmaculada Concepción, Av. Miguel Hidalgo 363, San Luis Rio Colorado</p>
-            <a 
-              href="https://maps.app.goo.gl/XPfro8oDiLChLQdo9" 
-              target="_blank" 
+            <a
+              href="https://maps.app.goo.gl/XPfro8oDiLChLQdo9"
+              target="_blank"
               rel="noopener noreferrer"
               className="mt-2 inline-block bg-red-800 text-white py-2 px-4 rounded hover:bg-red-300"
             >
@@ -96,9 +96,9 @@ const Home = () => {
           <div className="text-center">
             <h3 className="text-xl text-red-800 italic font-serif">Salón</h3>
             <p className="text-black">Salón Khaled, Cjon. Miguel Hidalgo y 17, San Luis Rio Colorado</p>
-            <a 
-              href="https://maps.app.goo.gl/ZPm7fN217pFVmr9i9" 
-              target="_blank" 
+            <a
+              href="https://maps.app.goo.gl/ZPm7fN217pFVmr9i9"
+              target="_blank"
               rel="noopener noreferrer"
               className="mt-2 inline-block bg-red-800 text-white py-2 px-4 rounded hover:bg-red-300"
             >
@@ -172,19 +172,19 @@ const Home = () => {
       <section className="py-8 px-4 bg-black">
         <h2 className="text-center text-xl text-red-800 italic font-serif mb-4">Galería</h2>
         <div className="max-w-md mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <img 
-            src="https://via.placeholder.com/200x200/000000/808080?text=Foto+1" 
-            alt="Foto 1 de la galería" 
+          <img
+            src="https://via.placeholder.com/200x200/000000/808080?text=Foto+1"
+            alt="Foto 1 de la galería"
             className="w-full h-auto object-cover rounded-lg border-2 border-black"
           />
-          <img 
-            src="https://via.placeholder.com/200x200/000000/808080?text=Foto+2" 
-            alt="Foto 2 de la galería" 
+          <img
+            src="https://via.placeholder.com/200x200/000000/808080?text=Foto+2"
+            alt="Foto 2 de la galería"
             className="w-full h-auto object-cover rounded-lg border-2 border-black"
           />
-          <img 
-            src="https://via.placeholder.com/200x200/000000/808080?text=Foto+3" 
-            alt="Foto 3 de la galería" 
+          <img
+            src="https://via.placeholder.com/200x200/000000/808080?text=Foto+3"
+            alt="Foto 3 de la galería"
             className="w-full h-auto object-cover rounded-lg border-2 border-black"
           />
         </div>
@@ -202,14 +202,14 @@ const Home = () => {
       {/* Décima Sección: 2 fotos de la pareja (anteriormente novena) */}
       <section className="py-8 px-4 bg-black">
         <div className="max-w-md mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <img 
-            src="https://via.placeholderblack/000000/808080?text=Foto+de+nosotros+1" 
-            alt="Foto 1 de la pareja" 
+          <img
+            src="https://via.placeholderblack/000000/808080?text=Foto+de+nosotros+1"
+            alt="Foto 1 de la pareja"
             className="w-full h-auto object-cover rounded-lg border-2 border-black"
           />
-          <img 
-            src="https://via.placeholderblack/000000/808080?text=Foto+de+nosotros+2" 
-            alt="Foto 2 de la pareja" 
+          <img
+            src="https://via.placeholderblack/000000/808080?text=Foto+de+nosotros+2"
+            alt="Foto 2 de la pareja"
             className="w-full h-auto object-cover rounded-lg border-2 border-black"
           />
         </div>

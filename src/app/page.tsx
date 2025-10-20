@@ -6,6 +6,10 @@ import Image from "next/image";
 
 /*MEDIA*/
 import headerimg from '../images/header-img-2.jpeg';
+import dateimg from '../images/date-img.jpg';
+import curchico from '../images/church.svg';
+import wineico from '../images/wine.png';
+import touchico from '../images/touch.svg';
 
 const Home = () => {
   const [nombre, setNombre] = useState('');
@@ -28,7 +32,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-black text-white font-poppins uppercase">
       {/* Primera Sección: Foto con marco */}
-      <section className="py-8 px-4">
+      <section className="py-8 px-4 border-r-10 border-l-10 border-[#c8bdb4]">
         <div className="relative w-full h-full max-w-md mx-auto bg-black border-4 border-black overflow-hidden grayscale-100">
           <h1 className="text-6xl font-gwendolyn text-white text-center py-7 capitalize">Alondra & Angel</h1>
           <Image
@@ -78,7 +82,7 @@ const Home = () => {
       </section>
 
       {/* Tercera Sección: Invitación y fecha */}
-      <section className="py-8 px-4 bg-black text-center ">
+      <section className="py-8 px-4 bg-black text-center border-r-10 border-l-10 border-[#c8bdb4]">
         <div className="max-w-md mx-auto space-y-4">
           <p className="text-gray-300 font-poppins text-base">
             Tenemos el honor de invitarlos a celebrar nuestra unión el día
@@ -97,12 +101,12 @@ const Home = () => {
       </section>
 
       {/* Cuarta Sección: Foto grande de la pareja */}
-      <section className="py-8 px-4">
-        <div className="max-w-md mx-auto">
-          <img
-            src=""
+      <section className="py-8 px-4 border-r-10 border-l-10 border-[#c8bdb4]">
+        <div className="">
+          <Image
+            src={dateimg}
             alt="Foto grande de Angel y Alondra"
-            className="w-full h-auto object-cover rounded-lg border-2 border-black"
+            className="w-full h-auto grayscale-75"
           />
         </div>
       </section>
@@ -111,27 +115,56 @@ const Home = () => {
       <section className="py-8 px-4 bg-[#c8bdb4]">
         <div className="max-w-md mx-auto space-y-6">
           <div className="text-center">
-            <h3 className="text-xl text-red-800 font-poppins">Parroquia</h3>
+            <div className='flex justify-center items-center'>
+              <div className="h-0.5 bg-black w-full mx-4"></div>
+              <Image
+                src={curchico}
+                alt='Icono de iglesia'
+                className='size-12'
+              />
+              <div className="h-0.5 bg-black w-full mx-4"></div>
+            </div>
+            <h3 className="text-4xl text-red-800 font-gwendolyn capitalize">Ceremonia Religiosa</h3>
             <p className="text-black">Iglesia Inmaculada Concepción, Av. Miguel Hidalgo 363, San Luis Rio Colorado</p>
+            <p className="text-xl font-poppins text-gray-700">5:30 PM</p>
             <a
               href="https://maps.app.goo.gl/XPfro8oDiLChLQdo9"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-block bg-red-800 text-white py-2 px-4 rounded hover:bg-red-300"
+              className="mt-2 inline-block border-black border-3 text-black py-2 px-4 rounded hover:bg-black hover:text-white transition-all duration-300"
             >
               MAPA
+              <Image 
+                src={touchico}
+                alt='Icono de toque'
+                className='inline-block size-6 ml-2 hover:fill-white'
+              />
             </a>
           </div>
           <div className="text-center">
-            <h3 className="text-xl text-red-800 font-poppins">Salón</h3>
+            <div className='flex justify-center items-center'>
+              <div className="h-0.5 bg-black w-full mx-4"></div>
+              <Image
+                src={wineico}
+                alt='Icono de copa'
+                className='size-12'
+              />
+              <div className="h-0.5 bg-black w-full mx-4"></div>
+            </div>
+            <h3 className="text-4xl text-red-800 font-gwendolyn capitalize ">Recepcion</h3>
             <p className="text-black">Salón Khaled, Cjon. Miguel Hidalgo y 17, San Luis Rio Colorado</p>
             <a
               href="https://maps.app.goo.gl/ZPm7fN217pFVmr9i9"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-block bg-red-800 text-white py-2 px-4 rounded hover:bg-red-300"
+              className="mt-2 inline-block border-3 border-black text-black py-2 px-4 rounded  hover:bg-black hover:text-white transition-all duration-300"
             >
               MAPA
+              <Image 
+                src={touchico}
+                alt='Icono de toque'
+                className='inline-block size-6 ml-2 hover:fill-white'
+              />
             </a>
           </div>
         </div>
@@ -140,7 +173,7 @@ const Home = () => {
       {/* Séptima Sección: Nuevo Formulario */}
       <section className="py-8 px-4 bg-[#c8bdb4]">
         <div className="max-w-md mx-auto space-y-4">
-          <h2 className="text-center text-xl text-red-800 font-poppins">Confirma tu Asistencia</h2>
+          <h2 className="text-center text-5xl text-red-800 font-gwendolyn capitalize">Confirma tu Asistencia</h2>
           {enviado ? (
             <p className="text-black text-center">¡Gracias por confirmar! Te esperamos.</p>
           ) : (
@@ -156,7 +189,7 @@ const Home = () => {
                   onChange={(e) => setNombre(e.target.value)}
                   placeholder="Ingresa tu nombre completo"
                   required
-                  className="w-full bg-black text-gray-300 placeholder-gray-700 px-3 py-2 rounded border border-red-800"
+                  className="w-full bg-white text-gray-300 placeholder-gray-700 px-3 py-2 rounded border border-black"
                 />
               </div>
               <div>
@@ -167,7 +200,7 @@ const Home = () => {
                   id="acompanantes"
                   value={acompanantes}
                   onChange={(e) => setAcompanantes(e.target.value)}
-                  className="w-full bg-black text-gray-300 px-3 py-2 rounded border border-red-800"
+                  className="w-full bg-white text-gray-700 px-3 py-2 rounded border border-black"
                 >
                   <option value="1">Sin acompañantes</option>
                   <option value="3">Un acompañante</option>
@@ -176,7 +209,7 @@ const Home = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-red-800 text-white py-2 rounded hover:bg-red-300"
+                className="w-full border-3 border-black text-black py-2 px-4 rounded  hover:bg-black hover:text-white transition-all duration-300"
               >
                 Enviar Confirmación
               </button>
@@ -186,7 +219,7 @@ const Home = () => {
       </section>
 
       {/* Sexta Sección: Información adicional */}
-      <section className="py-8 px-4 bg-black text-center">
+      <section className="py-8 px-4 bg-black text-center border-r-10 border-l-10 border-[#c8bdb4]">
         <div className="max-w-md mx-auto space-y-4">
           <p className="text-gray-300 font-poppins">
             Respetuosamente, no se permiten niños en el evento.
@@ -197,9 +230,8 @@ const Home = () => {
         </div>
       </section>
 
-
       {/* Octava Sección: Galería (anteriormente séptima) */}
-      <section className="py-8 px-4 bg-black">
+      <section className="py-8 px-4 bg-black border-r-10 border-l-10 border-[#c8bdb4]">
         <h2 className="text-center text-xl text-red-800 font-poppins mb-4">Galería</h2>
         <div className="max-w-md mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           <img

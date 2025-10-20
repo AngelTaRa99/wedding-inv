@@ -5,7 +5,7 @@ import Image from "next/image";
 
 
 /*MEDIA*/
-import headerimg from '../images/header-image.png';
+import headerimg from '../images/header-img-2.jpeg';
 
 const Home = () => {
   const [nombre, setNombre] = useState('');
@@ -26,44 +26,73 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
+    <div className="min-h-screen bg-black text-white font-poppins uppercase">
       {/* Primera Sección: Foto con marco */}
       <section className="py-8 px-4">
-        <div className="relative w-full h-full max-w-md mx-auto bg-black border-4 border-black overflow-hidden">
+        <div className="relative w-full h-full max-w-md mx-auto bg-black border-4 border-black overflow-hidden grayscale-100">
+          <h1 className="text-6xl font-gwendolyn text-white text-center py-7 capitalize">Alondra & Angel</h1>
           <Image
             src={headerimg}
             alt="Marco decorativo"
             width={800}
             height={300}
-            className="w-full h-auto object-cover border-50 border-gray-300"
+            className="w-full h-auto object-cover border-t-30 border-b-70 border-l-30 border-r-30 border-[#c8bdb4]"
           />
           <div className="absolute bottom-4 left-0 right-0 text-center">
-
-            <h1 className="text-xl italic font-serif text-black">Nos casamos</h1>
+            <h2 className="text-3xl font-poppins text-black tracking-widest border-t-3 border-b-3 border-black inline-block">NUESTRA BODA</h2>
           </div>
         </div>
       </section>
 
       {/* Segunda Sección: Cita bíblica y agradecimiento */}
-      <section className="py-32 px-4 bg-gray-300">
-        <div className="max-w-md mx-auto text-center space-y-4">
-          <p className="text-red-800 italic font-serif text-lg">
-            &quot;Por encima de todo, vístanse de amor, que es el vínculo perfecto.&quot; - Colosenses 3:14
-          </p>
-          <p className="text-black italic font-serif">
-            Agradecemos a nuestros queridos padres por su amor incondicional y guía en este camino hacia el matrimonio.
-          </p>
+      <section className="py-20 px-4 bg-[#c8bdb4]">
+        <div className="max-w-md mx-auto text-center space-y-15">
+          <div>
+            <p className="text-black font-poppins text-2xl tracking-wider font-semibold">
+              &quot;Por encima de todo, vístanse de amor, que es el vínculo perfecto.&quot;
+            </p>
+            <p className="text-gray-700 font-poppins text-2xl tracking-wider">
+              - Colosenses 3:14
+            </p>
+          </div>
+          <div>
+            <p className="text-black font-poppins tracking-wider text-lg mb-4">
+              CON LA BEDICION DE DIOS, DE NUESTROS PADRES Y NUESTROS PADRINOS
+            </p>
+            <div className='text-3xl'>
+              <p className="text-gray-700 font-birthstone capitalize">
+                Jose Angel Tapia & Leticia Ramírez
+              </p>
+              <p className="text-gray-700 font-birthstone capitalize">
+                Jose Zavala & Paola Romero
+              </p>
+              <p className="text-gray-700 font-birthstone capitalize">
+                Olivia Zavala & Carlos Garcia
+              </p>
+              <p className="text-gray-700 font-birthstone capitalize">
+                Guadalupe Aparicio & Gustavo Ayala
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Tercera Sección: Invitación y fecha */}
-      <section className="py-8 px-4 bg-black text-center">
+      <section className="py-8 px-4 bg-black text-center ">
         <div className="max-w-md mx-auto space-y-4">
-          <p className="text-gray-300 italic font-serif text-base">
-            Con honor y orgullo te invitamos a nuestra boda
+          <p className="text-gray-300 font-poppins text-base">
+            Tenemos el honor de invitarlos a celebrar nuestra unión el día
           </p>
-          <h2 className="text-3xl font-bold text-red-800">13 de Diciembre</h2>
-          <p className="text-xl italic font-serif text-gray-300">5:30 PM</p>
+          <p className="text-gray-300 font-poppins text-base font-bold">
+            SÁBADO
+          </p>
+          <div className="flex justify-center items-center text-white text-5xl font-poppins divide-x divide-white ">
+            <span className="px-3">13</span>
+            <span className="px-3">DIC</span>
+            <span className="px-3">2025</span>
+          </div>
+
+          <p className="text-xl font-poppins text-gray-400">5:30 PM</p>
         </div>
       </section>
 
@@ -79,10 +108,10 @@ const Home = () => {
       </section>
 
       {/* Quinta Sección: Direcciones */}
-      <section className="py-8 px-4 bg-gray-300">
+      <section className="py-8 px-4 bg-[#c8bdb4]">
         <div className="max-w-md mx-auto space-y-6">
           <div className="text-center">
-            <h3 className="text-xl text-red-800 italic font-serif">Parroquia</h3>
+            <h3 className="text-xl text-red-800 font-poppins">Parroquia</h3>
             <p className="text-black">Iglesia Inmaculada Concepción, Av. Miguel Hidalgo 363, San Luis Rio Colorado</p>
             <a
               href="https://maps.app.goo.gl/XPfro8oDiLChLQdo9"
@@ -94,7 +123,7 @@ const Home = () => {
             </a>
           </div>
           <div className="text-center">
-            <h3 className="text-xl text-red-800 italic font-serif">Salón</h3>
+            <h3 className="text-xl text-red-800 font-poppins">Salón</h3>
             <p className="text-black">Salón Khaled, Cjon. Miguel Hidalgo y 17, San Luis Rio Colorado</p>
             <a
               href="https://maps.app.goo.gl/ZPm7fN217pFVmr9i9"
@@ -108,28 +137,16 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Sexta Sección: Información adicional */}
-      <section className="py-8 px-4 bg-black text-center">
-        <div className="max-w-md mx-auto space-y-4">
-          <p className="text-gray-300 italic font-serif">
-            Respetuosamente, no se permiten niños en el evento.
-          </p>
-          <p className="text-blt-gray-300 italic font-serif">
-            El código de vestimenta es formal.
-          </p>
-        </div>
-      </section>
-
       {/* Séptima Sección: Nuevo Formulario */}
-      <section className="py-8 px-4 bg-gray-300">
+      <section className="py-8 px-4 bg-[#c8bdb4]">
         <div className="max-w-md mx-auto space-y-4">
-          <h2 className="text-center text-xl text-red-800 italic font-serif">Confirma tu Asistencia</h2>
+          <h2 className="text-center text-xl text-red-800 font-poppins">Confirma tu Asistencia</h2>
           {enviado ? (
             <p className="text-black text-center">¡Gracias por confirmar! Te esperamos.</p>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-black italic font-serif" htmlFor="nombre">
+                <label className="block text-black font-poppins" htmlFor="nombre">
                   Tu nombre (requerido)
                 </label>
                 <input
@@ -143,7 +160,7 @@ const Home = () => {
                 />
               </div>
               <div>
-                <label className="block text-black italic font-serif" htmlFor="acompanantes">
+                <label className="block text-black font-poppins" htmlFor="acompanantes">
                   Número de acompañantes
                 </label>
                 <select
@@ -168,9 +185,22 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Sexta Sección: Información adicional */}
+      <section className="py-8 px-4 bg-black text-center">
+        <div className="max-w-md mx-auto space-y-4">
+          <p className="text-gray-300 font-poppins">
+            Respetuosamente, no se permiten niños en el evento.
+          </p>
+          <p className="text-blt-gray-300 font-poppins">
+            El código de vestimenta es formal.
+          </p>
+        </div>
+      </section>
+
+
       {/* Octava Sección: Galería (anteriormente séptima) */}
       <section className="py-8 px-4 bg-black">
-        <h2 className="text-center text-xl text-red-800 italic font-serif mb-4">Galería</h2>
+        <h2 className="text-center text-xl text-red-800 font-poppins mb-4">Galería</h2>
         <div className="max-w-md mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           <img
             src="https://via.placeholder.com/200x200/000000/808080?text=Foto+1"
@@ -191,9 +221,9 @@ const Home = () => {
       </section>
 
       {/* Novena Sección: Recomendación de regalo (anteriormente octava) */}
-      <section className="py-8 px-4 bg-gray-300 text-center">
+      <section className="py-8 px-4 bg-[#c8bdb4] text-center">
         <div className="max-w-md mx-auto">
-          <p className="text-black italic font-serif">
+          <p className="text-black font-poppins">
             Como recomendación de regalo, apreciamos cualquier contribución para nuestro nuevo hogar.
           </p>
         </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Birthstone, Poppins, Gwendolyn } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +11,33 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const birthstone = Birthstone({
+  subsets: ["latin"],
+  weight: "400", 
+  variable: "--font-birthstone",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900"],
+    variable: "--font-poppins",
+  });
+
+  const gwendolyn = Gwendolyn({
+    subsets: ["latin"],
+    weight: ["400","700"], 
+    variable: "--font-gwendolyn",
+  });
 
 export const metadata: Metadata = {
   title: "Invitación de boda - Angel & Alondra",

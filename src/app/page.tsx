@@ -32,18 +32,20 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-black text-white font-poppins uppercase">
       {/* Primera Sección: Foto con marco */}
-      <section className="py-8 px-4 border-r-10 border-l-10 border-[#c8bdb4]">
-        <div className="relative w-full h-full max-w-md mx-auto bg-black border-4 border-black overflow-hidden grayscale-100">
-          <h1 className="text-6xl font-gwendolyn text-white text-center py-7 capitalize">Alondra & Angel</h1>
-          <Image
-            src={headerimg}
-            alt="Marco decorativo"
-            width={800}
-            height={300}
-            className="w-full h-auto object-cover border-t-30 border-b-70 border-l-30 border-r-30 border-[#c8bdb4]"
-          />
+      <section className="py-8 px-4 border-r-5 border-l-5 border-[#c8bdb4]">
+        <div className="relative w-full h-full max-w-md mx-auto bg-black border-4 border-black overflow-hidden">
+          <h1 className="text-4xl font-gwendolyn text-white text-center py-7 capitalize">Alondra & Angel</h1>
+          <div className='border-t-30 border-b-70 border-l-30 border-r-30 border-[#c8bdb4]'>
+            <Image
+              src={headerimg}
+              alt="Marco decorativo"
+              width={800}
+              height={300}
+              className="w-full h-auto object-cover grayscale-100"
+            />
+          </div>
           <div className="absolute bottom-4 left-0 right-0 text-center">
-            <h2 className="text-3xl font-poppins text-black tracking-widest border-t-3 border-b-3 border-black inline-block">NUESTRA BODA</h2>
+            <h2 className="text-2xl font-poppins text-black tracking-widest border-t-3 border-b-3 border-black inline-block">NUESTRA BODA</h2>
           </div>
         </div>
       </section>
@@ -52,10 +54,10 @@ const Home = () => {
       <section className="py-20 px-4 bg-[#c8bdb4]">
         <div className="max-w-md mx-auto text-center space-y-15">
           <div>
-            <p className="text-black font-poppins text-2xl tracking-wider font-semibold">
+            <p className="text-black font-poppins text-xl tracking-wider font-semibold">
               &quot;Por encima de todo, vístanse de amor, que es el vínculo perfecto.&quot;
             </p>
-            <p className="text-gray-700 font-poppins text-2xl tracking-wider">
+            <p className="text-gray-700 font-poppins text-xl tracking-wider">
               - Colosenses 3:14
             </p>
           </div>
@@ -63,7 +65,7 @@ const Home = () => {
             <p className="text-black font-poppins tracking-wider text-lg mb-4">
               CON LA BEDICION DE DIOS, DE NUESTROS PADRES Y NUESTROS PADRINOS
             </p>
-            <div className='text-3xl'>
+            <div className='text-2xl'>
               <p className="text-gray-700 font-birthstone capitalize">
                 Jose Angel Tapia & Leticia Ramírez
               </p>
@@ -82,7 +84,7 @@ const Home = () => {
       </section>
 
       {/* Tercera Sección: Invitación y fecha */}
-      <section className="py-8 px-4 bg-black text-center border-r-10 border-l-10 border-[#c8bdb4]">
+      <section className="py-8 px-4 bg-black text-center border-r-5 border-l-5 border-[#c8bdb4]">
         <div className="max-w-md mx-auto space-y-4">
           <p className="text-gray-300 font-poppins text-base">
             Tenemos el honor de invitarlos a celebrar nuestra unión el día
@@ -97,16 +99,10 @@ const Home = () => {
           </div>
 
           <p className="text-xl font-poppins text-gray-400">5:30 PM</p>
-        </div>
-      </section>
-
-      {/* Cuarta Sección: Foto grande de la pareja */}
-      <section className="py-8 px-4 border-r-10 border-l-10 border-[#c8bdb4]">
-        <div className="">
           <Image
             src={dateimg}
             alt="Foto grande de Angel y Alondra"
-            className="w-full h-auto grayscale-75"
+            className="w-full h-auto grayscale-75 object-cover rounded-lg border-2 border-black"
           />
         </div>
       </section>
@@ -134,7 +130,7 @@ const Home = () => {
               className="mt-2 inline-block border-black border-3 text-black py-2 px-4 rounded hover:bg-black hover:text-white transition-all duration-300"
             >
               MAPA
-              <Image 
+              <Image
                 src={touchico}
                 alt='Icono de toque'
                 className='inline-block size-6 ml-2 hover:fill-white'
@@ -160,7 +156,7 @@ const Home = () => {
               className="mt-2 inline-block border-3 border-black text-black py-2 px-4 rounded  hover:bg-black hover:text-white transition-all duration-300"
             >
               MAPA
-              <Image 
+              <Image
                 src={touchico}
                 alt='Icono de toque'
                 className='inline-block size-6 ml-2 hover:fill-white'
@@ -219,7 +215,7 @@ const Home = () => {
       </section>
 
       {/* Sexta Sección: Información adicional */}
-      <section className="py-8 px-4 bg-black text-center border-r-10 border-l-10 border-[#c8bdb4]">
+      <section className="py-8 px-4 bg-black text-center border-r-5 border-l-5 border-[#c8bdb4]">
         <div className="max-w-md mx-auto space-y-4">
           <p className="text-gray-300 font-poppins">
             Respetuosamente, no se permiten niños en el evento.
@@ -231,7 +227,7 @@ const Home = () => {
       </section>
 
       {/* Octava Sección: Galería (anteriormente séptima) */}
-      <section className="py-8 px-4 bg-black border-r-10 border-l-10 border-[#c8bdb4]">
+      <section className="py-8 px-4 bg-black border-r-5 border-l-5 border-[#c8bdb4]">
         <h2 className="text-center text-xl text-red-800 font-poppins mb-4">Galería</h2>
         <div className="max-w-md mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           <img
@@ -278,7 +274,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-4 text-center text-gray-300">
+      <footer className="py-4 text-center text-gray-300 text-l">
         <p>© 2025 Angel & Alondra</p>
       </footer>
     </div>

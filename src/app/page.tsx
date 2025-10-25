@@ -10,24 +10,49 @@ import dateimg from '../images/date-img.jpg';
 import curchico from '../images/church.svg';
 import wineico from '../images/wine.png';
 import touchico from '../images/touch.svg';
+import divider1 from '../images/divider 1.svg';
+import divider2 from '../images/divider 2.svg';
+import divider3 from '../images/divider 3.svg';
+import divider4 from '../images/divider 4.svg';
+import divider5 from '../images/divider 6.svg';
+import dividerf from '../images/FloralDivider.svg';
+import dressico from '../images/wedding-dress.png';
+import suitico from '../images/suit-and-tie-outfit.png';
+import envelopeico from '../images/email.png';
+import crossico from '../images/cross.png';
 
 const Home = () => {
   const [nombre, setNombre] = useState('');
-  const [acompanantes, setAcompanantes] = useState('1'); // Estado para el selector
+  const [acompanantes, setAcompanantes] = useState('0'); // Estado para el selector
   const [enviado, setEnviado] = useState(false); // Para manejar el envío
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (nombre.trim() === '') {
-      alert('Por favor, ingresa tu nombre.');
-      return;
-    }
-    // Simular envío (puedes reemplazar con una API real)
-    console.log({ nombre, acompanantes });
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  if (nombre.trim() === '') {
+    alert('Por favor, ingresa tu nombre.');
+    return;
+  }
+
+  try {
+    const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        nombre,
+        acompanantes,
+      }),
+    });
+
     setEnviado(true);
-    setNombre(''); // Limpiar campos
+    setNombre('');
     setAcompanantes('1');
-  };
+  } catch (error) {
+    console.error("Error al enviar:", error);
+    alert("Ocurrió un error al enviar tu confirmación. Intenta de nuevo.");
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-black text-white font-poppins uppercase">
@@ -53,32 +78,42 @@ const Home = () => {
       {/* Segunda Sección: Cita bíblica y agradecimiento */}
       <section className="py-20 px-4 bg-[#c8bdb4]">
         <div className="max-w-md mx-auto text-center space-y-15">
-          <div>
+          <div className='h-[50vh] flex flex-col justify-center items-center'>
+            <Image
+              src={crossico}
+              alt='Divider decorativo 1'
+              className='mb-4 size-12 opacity-65'
+            />
             <p className="text-black font-poppins text-xl tracking-wider font-semibold">
               &quot;Por encima de todo, vístanse de amor, que es el vínculo perfecto.&quot;
             </p>
             <p className="text-gray-700 font-poppins text-xl tracking-wider">
               - Colosenses 3:14
             </p>
+            <Image
+              src={dividerf}
+              alt='Divider decorativo 3'
+              className='mt-4 size-70 opacity-75'
+            />
           </div>
-          <div>
-            <p className="text-black font-poppins tracking-wider text-lg mb-4">
-              CON LA BEDICION DE DIOS, DE NUESTROS PADRES Y NUESTROS PADRINOS
+        </div>
+        <div className='text-center'>
+          <p className="text-black font-poppins tracking-wider text-lg mb-4">
+            CON LA BEDICION DE DIOS, DE NUESTROS PADRES Y NUESTROS PADRINOS
+          </p>
+          <div className='text-2xl'>
+            <p className="text-gray-700 font-birthstone capitalize">
+              Jose Angel Tapia & Leticia Ramírez
             </p>
-            <div className='text-2xl'>
-              <p className="text-gray-700 font-birthstone capitalize">
-                Jose Angel Tapia & Leticia Ramírez
-              </p>
-              <p className="text-gray-700 font-birthstone capitalize">
-                Jose Zavala & Paola Romero
-              </p>
-              <p className="text-gray-700 font-birthstone capitalize">
-                Olivia Zavala & Carlos Garcia
-              </p>
-              <p className="text-gray-700 font-birthstone capitalize">
-                Guadalupe Aparicio & Gustavo Ayala
-              </p>
-            </div>
+            <p className="text-gray-700 font-birthstone capitalize">
+              Jose Zavala & Paola Romero
+            </p>
+            <p className="text-gray-700 font-birthstone capitalize">
+              Olivia Zavala & Carlos Garcia
+            </p>
+            <p className="text-gray-700 font-birthstone capitalize">
+              Guadalupe Aparicio & Gustavo Ayala
+            </p>
           </div>
         </div>
       </section>
@@ -92,7 +127,7 @@ const Home = () => {
           <p className="text-gray-300 font-poppins text-base font-bold">
             SÁBADO
           </p>
-          <div className="flex justify-center items-center text-white text-5xl font-poppins divide-x divide-white ">
+          <div className="flex justify-center items-center text-white text-5xl font-poppins divide-x divide-white border-t-3 border-b-3 border-white ">
             <span className="px-3">13</span>
             <span className="px-3">DIC</span>
             <span className="px-3">2025</span>
@@ -107,17 +142,18 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Quinta Sección: Direcciones */}
+      {/* Quinta Sección: Dir ecciones */}
       <section className="py-8 px-4 bg-[#c8bdb4]">
-        <div className="max-w-md mx-auto space-y-6">
-          <div className="text-center">
-            <div className='flex justify-center items-center'>
+        <div className=" mx-auto space-y-2">
+          <div className="text-center h-[50vh]">
+            <div className='flex justify-center items-center text-center'>
               <div className="h-0.5 bg-black w-full mx-4"></div>
               <Image
                 src={curchico}
                 alt='Icono de iglesia'
-                className='size-12'
+                className='size-12 fill-white'
               />
+
               <div className="h-0.5 bg-black w-full mx-4"></div>
             </div>
             <h3 className="text-4xl text-red-800 font-gwendolyn capitalize">Ceremonia Religiosa</h3>
@@ -136,8 +172,16 @@ const Home = () => {
                 className='inline-block size-6 ml-2 hover:fill-white'
               />
             </a>
+
+            <Image
+              src={dividerf}
+              alt='Divider decorativo 5'
+              className='mx-auto size-60 opacity-45'
+            />
           </div>
-          <div className="text-center">
+
+
+          <div className="text-center h-[50vh]">
             <div className='flex justify-center items-center'>
               <div className="h-0.5 bg-black w-full mx-4"></div>
               <Image
@@ -162,20 +206,26 @@ const Home = () => {
                 className='inline-block size-6 ml-2 hover:fill-white'
               />
             </a>
+            <Image
+              src={dividerf}
+              alt='Divider decorativo 5'
+              className='mx-auto size-60 opacity-45'
+            />
           </div>
+
         </div>
       </section>
 
       {/* Séptima Sección: Nuevo Formulario */}
-      <section className="py-8 px-4 bg-[#c8bdb4]">
+      <section className="py-18 px-4 bg-red-950 inner-shadow p-4">
         <div className="max-w-md mx-auto space-y-4">
-          <h2 className="text-center text-5xl text-red-800 font-gwendolyn capitalize">Confirma tu Asistencia</h2>
+          <h2 className="text-center text-5xl text-gray-300 font-gwendolyn capitalize">Confirma tu Asistencia</h2>
           {enviado ? (
-            <p className="text-black text-center">¡Gracias por confirmar! Te esperamos.</p>
+            <p className="text-gray-300 text-center">¡Gracias por confirmar! Te esperamos.</p>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-black font-poppins" htmlFor="nombre">
+                <label className="block text-gray-300 font-poppins" htmlFor="nombre">
                   Tu nombre (requerido)
                 </label>
                 <input
@@ -189,7 +239,7 @@ const Home = () => {
                 />
               </div>
               <div>
-                <label className="block text-black font-poppins" htmlFor="acompanantes">
+                <label className="block text-gray-300 font-poppins" htmlFor="acompanantes">
                   Número de acompañantes
                 </label>
                 <select
@@ -198,14 +248,14 @@ const Home = () => {
                   onChange={(e) => setAcompanantes(e.target.value)}
                   className="w-full bg-white text-gray-700 px-3 py-2 rounded border border-black"
                 >
-                  <option value="1">Sin acompañantes</option>
-                  <option value="3">Un acompañante</option>
+                  <option value="0">Sin acompañantes</option>
+                  <option value="1">Un acompañante</option>
                   <option value="2">Dos acompañantes</option>
                 </select>
               </div>
               <button
                 type="submit"
-                className="w-full border-3 border-black text-black py-2 px-4 rounded  hover:bg-black hover:text-white transition-all duration-300"
+                className="w-full border-3 border-gray-300 text-gray-300 py-2 px-4 rounded  hover:bg-black hover:text-white transition-all duration-300"
               >
                 Enviar Confirmación
               </button>
@@ -214,62 +264,104 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Sexta Sección: Información adicional */}
-      <section className="py-8 px-4 bg-black text-center border-r-5 border-l-5 border-[#c8bdb4]">
-        <div className="max-w-md mx-auto space-y-4">
-          <p className="text-gray-300 font-poppins">
-            Respetuosamente, no se permiten niños en el evento.
-          </p>
-          <p className="text-blt-gray-300 font-poppins">
-            El código de vestimenta es formal.
-          </p>
+      {/* Octava Sección: Galería (anteriormente séptima) */}
+      <section className="py-12 px-4 bg-black border-r-5 border-l-5 border-[#c8bdb4]">
+        <div className="relative max-w-md mx-auto">
+          {/* Imagen grande al centro */}
+          <div className="relative">
+            <Image
+              src={headerimg}
+              alt="Foto grande de la galería"
+              width={400}
+              height={400}
+              className="w-full h-auto object-cover grayscale-100 border-45 border-b-65"
+              priority
+            />
+          </div>
+
+          {/* Imagen pequeña superior derecha */}
+          <div className="absolute top-0 left-[-25] -rotate-23 translate-x-1/4 -translate-y-1/4">
+            <Image
+              src={headerimg}
+              alt="Foto 2 de la galería"
+              width={150}
+              height={150}
+              className="border-18 border-b-30 shadow-2xl grayscale-100"
+            />
+          </div>
+
+          {/* Imagen pequeña inferior derecha */}
+          <div className="absolute bottom-0 right-15 rotate-25 translate-x-1/4 translate-y-1/4">
+            <Image
+              src={headerimg}
+              alt="Foto 3 de la galería"
+              width={150}
+              height={150}
+              className=" border-18 border-b-30 shadow-2xl grayscale-100"
+            />
+          </div>
         </div>
       </section>
 
-      {/* Octava Sección: Galería (anteriormente séptima) */}
-      <section className="py-8 px-4 bg-black border-r-5 border-l-5 border-[#c8bdb4]">
-        <h2 className="text-center text-xl text-red-800 font-poppins mb-4">Galería</h2>
-        <div className="max-w-md mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <img
-            src="https://via.placeholder.com/200x200/000000/808080?text=Foto+1"
-            alt="Foto 1 de la galería"
-            className="w-full h-auto object-cover rounded-lg border-2 border-black"
+      {/* Sexta Sección: Información adicional */}
+      <section className="py-8 px-4 bg- text-center border-r-5 border-l-5 border-[#c8bdb4] bg-[#c8bdb4]">
+        <div className="max-w-md mx-auto space-y-4">
+          <div className='border-t-2 border-black h-[25vh] flex flex-col justify-center items-center'>
+            <p className="text-black font-gwendolyn text-5xl capitalize">
+              Respetuosamente
+            </p>
+            <p className='tracking-widest text-gray-700'> NO NIÑOS </p>
+          </div>
+          <Image
+            src={dividerf}
+            alt='divisor de flores'
           />
-          <img
-            src="https://via.placeholder.com/200x200/000000/808080?text=Foto+2"
-            alt="Foto 2 de la galería"
-            className="w-full h-auto object-cover rounded-lg border-2 border-black"
-          />
-          <img
-            src="https://via.placeholder.com/200x200/000000/808080?text=Foto+3"
-            alt="Foto 3 de la galería"
-            className="w-full h-auto object-cover rounded-lg border-2 border-black"
-          />
+          <div className='border-b-2 border-black h-[25vh] flex flex-col justify-center items-center'>
+            <p className="text-black font-birthstone text-4xl capitalize">
+              código de vestimenta.
+            </p>
+            <div className='my-4'>
+              <Image
+                src={dressico}
+                alt='Icono de vestido de boda'
+                className='inline-block size-12'
+              />
+              <Image
+                src={suitico}
+                alt='Icono de traje'
+                className='inline-block size-12'
+              />
+            </div>
+            <p className='tracking-widest text-gray-700'>FORMAL</p>
+          </div>
         </div>
       </section>
+
 
       {/* Novena Sección: Recomendación de regalo (anteriormente octava) */}
       <section className="py-8 px-4 bg-[#c8bdb4] text-center">
         <div className="max-w-md mx-auto">
-          <p className="text-black font-poppins">
-            Como recomendación de regalo, apreciamos cualquier contribución para nuestro nuevo hogar.
+          <p className='font-gwendolyn capitalize text-5xl text-black'>Regalo</p>
+          <p className="text-gray-700 font-poppins">
+            Como recomendación de regalo, apreciamos cualquier contribución en efectivo.
           </p>
+          <Image
+            src={envelopeico}
+            alt='Icono de traje'
+            className='inline-block size-12 mt-4'
+          />
         </div>
       </section>
 
       {/* Décima Sección: 2 fotos de la pareja (anteriormente novena) */}
       <section className="py-8 px-4 bg-black">
-        <div className="max-w-md mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <img
-            src="https://via.placeholderblack/000000/808080?text=Foto+de+nosotros+1"
+        <div className="max-w-md mx-auto flex gap-4">
+          <Image
+            src={headerimg}
             alt="Foto 1 de la pareja"
-            className="w-full h-auto object-cover rounded-lg border-2 border-black"
+            className="w-auto h-auto object-cover rounded-lg border-2 border-black"
           />
-          <img
-            src="https://via.placeholderblack/000000/808080?text=Foto+de+nosotros+2"
-            alt="Foto 2 de la pareja"
-            className="w-full h-auto object-cover rounded-lg border-2 border-black"
-          />
+          
         </div>
       </section>
 

@@ -10,11 +10,6 @@ import dateimg from '../images/date-img.jpg';
 import curchico from '../images/church.svg';
 import wineico from '../images/wine.png';
 import touchico from '../images/touch.svg';
-import divider1 from '../images/divider 1.svg';
-import divider2 from '../images/divider 2.svg';
-import divider3 from '../images/divider 3.svg';
-import divider4 from '../images/divider 4.svg';
-import divider5 from '../images/divider 6.svg';
 import dividerf from '../images/FloralDivider.svg';
 import dressico from '../images/wedding-dress.png';
 import suitico from '../images/suit-and-tie-outfit.png';
@@ -197,7 +192,7 @@ const Home = () => {
               href="https://maps.app.goo.gl/ZPm7fN217pFVmr9i9"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-block border-3 border-black text-black py-2 px-4 rounded  hover:bg-black hover:text-white transition-all duration-300"
+              className="mt-2 inline-block border-3 border-black text-black py-2 px-4 rounded hover:bg-black hover:text-white transition-all duration-300"
             >
               MAPA
               <Image
@@ -235,7 +230,7 @@ const Home = () => {
                   onChange={(e) => setNombre(e.target.value)}
                   placeholder="Ingresa tu nombre completo"
                   required
-                  className="w-full bg-white text-gray-300 placeholder-gray-700 px-3 py-2 rounded border border-black"
+                  className="w-full bg-white text-gray-700 placeholder-gray-700 px-3 py-2 rounded border border-black"
                 />
               </div>
               <div>

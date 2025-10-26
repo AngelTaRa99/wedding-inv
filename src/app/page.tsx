@@ -194,6 +194,7 @@ const Home = () => {
             </div>
             <h3 className="text-4xl text-red-800 font-gwendolyn capitalize ">Recepcion</h3>
             <p className="text-black">Salón Khaled, Cjon. Miguel Hidalgo y 17, San Luis Rio Colorado</p>
+            <p className="text-xl font-poppins text-gray-700">8:00 PM</p>
             <a
               href="https://maps.app.goo.gl/ZPm7fN217pFVmr9i9"
               target="_blank"

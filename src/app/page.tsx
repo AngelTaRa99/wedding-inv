@@ -6,6 +6,12 @@ import Image from "next/image";
 
 /*MEDIA*/
 import headerimg from '../images/header-img-2.jpeg';
+import footerimg from '../images/footer-img.jpeg';
+import img1 from '../images/image-1.jpeg';
+import img2 from '../images/image-2.jpeg';
+import img3 from '../images/image-3.jpeg';
+import img4 from '../images/image-4.jpeg';
+import img5 from '../images/image-5.jpg';
 import dateimg from '../images/date-img.jpg';
 import curchico from '../images/church.svg';
 import wineico from '../images/wine.png';
@@ -265,7 +271,7 @@ const Home = () => {
           {/* Imagen grande al centro */}
           <div className="relative">
             <Image
-              src={headerimg}
+              src={img5}
               alt="Foto grande de la galería"
               width={400}
               height={400}
@@ -277,7 +283,7 @@ const Home = () => {
           {/* Imagen pequeña superior derecha */}
           <div className="absolute top-0 left-[-25] -rotate-23 translate-x-1/4 -translate-y-1/4">
             <Image
-              src={headerimg}
+              src={img4}
               alt="Foto 2 de la galería"
               width={150}
               height={150}
@@ -288,7 +294,7 @@ const Home = () => {
           {/* Imagen pequeña inferior derecha */}
           <div className="absolute bottom-0 right-15 rotate-25 translate-x-1/4 translate-y-1/4">
             <Image
-              src={headerimg}
+              src={img1}
               alt="Foto 3 de la galería"
               width={150}
               height={150}
@@ -338,7 +344,7 @@ const Home = () => {
         <div className="max-w-md mx-auto">
           <p className='font-gwendolyn capitalize text-5xl text-black'>Regalo</p>
           <p className="text-gray-700 font-poppins">
-            Como recomendación de regalo, apreciamos cualquier contribución en efectivo.
+            Su presencia es nuestro mejor regalo. Si deseas  hacernos un obsequio, una colaboración en efectivo nos ayudaría muchísimo a empezar nuestra vida juntos.
           </p>
           <Image
             src={envelopeico}
@@ -352,9 +358,9 @@ const Home = () => {
       <section className="py-8 px-4 bg-black">
         <div className="max-w-md mx-auto flex gap-4">
           <Image
-            src={headerimg}
+            src={footerimg}
             alt="Foto 1 de la pareja"
-            className="w-auto h-auto object-cover rounded-lg border-2 border-black"
+            className="w-auto h-auto object-cover rounded-lg border-2 border-black grayscale-100"
           />
           
         </div>

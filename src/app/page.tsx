@@ -26,33 +26,41 @@ const Home = () => {
   const [nombre, setNombre] = useState('');
   const [acompanantes, setAcompanantes] = useState('0'); // Estado para el selector
   const [enviado, setEnviado] = useState(false); // Para manejar el envío
+  const [cargando, setCargando] = useState(false); // Para mostrar el estado de carga
+
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  if (nombre.trim() === '') {
-    alert('Por favor, ingresa tu nombre.');
-    return;
-  }
+    e.preventDefault();
 
-  try {
-    const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        nombre,
-        acompanantes,
-      }),
-    });
+    if (nombre.trim() === '') {
+      alert('Por favor, ingresa tu nombre.');
+      return;
+    }
 
-    setEnviado(true);
-    setNombre('');
-    setAcompanantes('1');
-  } catch (error) {
-    console.error("Error al enviar:", error);
-    alert("Ocurrió un error al enviar tu confirmación. Intenta de nuevo.");
-  }
-};
+    setCargando(true); // Muestra el spinner
+
+    try {
+      await fetch(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre,
+          acompanantes,
+        }),
+      });
+
+      setEnviado(true);
+      setNombre('');
+      setAcompanantes('0');
+    } catch (error) {
+      console.error("Error al enviar:", error);
+      alert("Ocurrió un error al enviar tu confirmación. Intenta de nuevo.");
+    } finally {
+      setCargando(false); // Oculta el spinner
+    }
+  };
+
 
 
   return (
@@ -257,10 +265,20 @@ const Home = () => {
               </div>
               <button
                 type="submit"
-                className="w-full border-3 border-gray-300 text-gray-300 py-2 px-4 rounded  hover:bg-black hover:text-white transition-all duration-300"
+                disabled={cargando}
+                className={`w-full border-3 border-gray-300 text-gray-300 py-2 px-4 rounded transition-all duration-300
+    ${cargando ? 'bg-gray-700 cursor-not-allowed' : 'hover:bg-black hover:text-white'}`}
               >
-                Enviar Confirmación
+                {cargando ? (
+                  <div className="flex justify-center items-center space-x-2">
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <span>Enviando...</span>
+                  </div>
+                ) : (
+                  'Enviar Confirmación'
+                )}
               </button>
+
             </form>
           )}
         </div>
@@ -363,7 +381,7 @@ const Home = () => {
             alt="Foto 1 de la pareja"
             className="w-auto h-auto object-cover rounded-lg border-2 border-black grayscale-100"
           />
-          
+
         </div>
       </section>
 

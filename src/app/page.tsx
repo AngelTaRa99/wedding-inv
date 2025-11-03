@@ -248,7 +248,7 @@ const Home = () => {
                   className="w-full bg-white text-gray-700 placeholder-gray-700 px-3 py-2 rounded border border-black"
                 />
               </div>
-              <div>
+              <div className='hidden'>
                 <label className="block text-gray-300 font-poppins" htmlFor="acompanantes">
                   Número de acompañantes
                 </label>
